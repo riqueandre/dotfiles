@@ -36,7 +36,7 @@ swapon /dev/sda1
 pacman -Syy
 pacman -S reflector
 reflector -c "US" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist
-pacstrap /mnt base base-devel linux linux-firmware vi vim nano
+pacstrap /mnt base base-devel linux linux-firmware vi vim nano dhcpcd grub
 ```
 
 ## Fstab
@@ -53,7 +53,6 @@ arch-chroot /mnt
 ```
 ln -sf /usr/share/zoneinfo/America/Recife /etc/localtime
 hwclock --systohc
-pacman -S vim
 ```
 
 ## Localization
@@ -69,7 +68,6 @@ echo LANG=en_US.UTF-8 > /etc/locale.conf
 echo dev > /etc/hostname
 echo -e "127.0.0.1 \t   localhost" >> /etc/hosts
 echo -e "::1        \t  localhost" >> /etc/hosts
-pacman -S dhcpcd
 systemctl enable dhcpcd
 ```
 
@@ -80,9 +78,7 @@ passwd
 
 ## Boot loader
 ```
-pacman -S grub
 grub-install --target=i386-pc /dev/sda
-grub-mkconfig -o /boot/grub/grub.cfg
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
