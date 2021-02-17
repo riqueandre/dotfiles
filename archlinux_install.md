@@ -36,7 +36,7 @@ swapon /dev/sda1
 pacman -Syy
 pacman -S reflector
 reflector -c "US" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist
-pacstrap /mnt base base-devel linux linux-firmware vi vim nano dhcpcd grub
+pacstrap /mnt base base-devel linux linux-firmware vi vim nano dhcpcd grub sudo
 ```
 
 ## Fstab
