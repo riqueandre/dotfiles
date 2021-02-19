@@ -22,12 +22,12 @@ cfdisk /dev/sda
 ```
 mkfs.ext4 /dev/sda2
 mkswap /dev/sda1
+swapon /dev/sda1
 ```
 
 ## Mount the file systems
 ```
 mount /dev/sda2 /mnt
-swapon /dev/sda1
 ```
 
 # Installation
