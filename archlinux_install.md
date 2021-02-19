@@ -36,7 +36,7 @@ mount /dev/sda2 /mnt
 pacman -Syy
 pacman -S reflector
 reflector -c "US" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist
-pacstrap /mnt base base-devel linux linux-firmware linux-headers asp vi vim nano dhcpcd grub sudo open-vm-tools gtkmm3
+pacstrap /mnt base base-devel linux linux-firmware linux-headers asp vi vim nano dhcpcd grub sudo open-vm-tools gtkmm gtkmm3
 ```
 
 ## Fstab
@@ -73,6 +73,8 @@ systemctl enable dhcpcd
 
 ## VM
 ```
+cat /proc/version > /etc/arch-release # open-vm-tools needs this
+systemctl enable vmware-vmblock-fuse
 systemctl enable vmtoolsd
 ```
 
