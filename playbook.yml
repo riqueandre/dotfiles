@@ -1,0 +1,51 @@
+- name: sync date
+  ansible.builtin.command: timedatectl set-ntp true
+
+- name: create partitions layout
+  ansible.builtin.command: sfdisk /dev/sda < partitions.txt
+
+- name: mkfs
+  ansible.builtin.command: mkfs.ext4 /dev/sda2
+
+- name: mkswap
+  ansible.builtin.command: mkswap /dev/sda1
+
+- name: swapon
+  ansible.builtin.command: swapon /dev/sda1
+
+- name: mount /dev/sda2 in /mnt
+  ansible.builtin.command: mount /dev/sda2 /mnt
+
+- name: pacstrap
+  ansible.builtin.command: pacstrap /mnt base base-devel linux linux-firmware linux-headers asp vi vim nano dhcpcd grub sudo open-vm-tools gtkmm gtkmm3 git wget 
+
+- name: generate fstab
+  ansible.builtin.command: genfstab -U /mnt >> /mnt/etc/fstab
+
+- name: chroot
+  ansible.builtin.command: arch-chroot /mnt
+
+- name: timezone
+  ansible.builtin.command: ln -sf /usr/share/zoneinfo/America/Recife /etc/localtime
+
+- name: clock
+  ansible.builtin.command: hwclock --systohc
+
+- name: set locale to en_US.UTF-8 UTF-8
+  ansible.builtin.command: sed -i '/en_US.UTF-8 UTF-8/s/^#//g' /etc/locale.gen
+
+- name: generating locale
+  ansible.builtin.command: locale-gen
+
+- name: set LANG
+  ansible.builtin.command: echo LANG=en_US.UTF-8 > /etc/locale.conf
+
+- name: hostname
+  ansible.builtin.command: echo dev > /etc/hostname
+
+- name: hosts ipv4
+  ansible.builtin.command: echo -e "127.0.0.1 \t   localhost" >> /etc/hosts
+
+- name: hosts ipv6
+  ansible.builtin.command: echo -e "::1        \t  localhost" >> /etc/hosts
+
