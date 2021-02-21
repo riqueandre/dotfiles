@@ -9,7 +9,7 @@ sector-size: 512
 /dev/sda2 : start=     1050624, size=   166721536, type=83
 EOF
 
-cat <<- EOF > /mnt/install2.sh
+cat <<- EOF > install2.sh
 pacman -Syu
 pacman -S  --noconfirm --needed archlinux-keyring
 pacman -S  --noconfirm --needed base-devel linux-headers asp vi vim nano dhcpcd grub sudo open-vm-tools gtkmm gtkmm3 git wget
@@ -44,4 +44,4 @@ pacman -S --noconfirm --needed --noprogressbar --quiet reflector
 reflector -c "US" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist
 pacstrap /mnt base linux linux-firmware
 genfstab -U /mnt >> /mnt/etc/fstab
-arch-chroot /mnt /bin/bash -e -x /mnt/install2.sh
+arch-chroot /mnt /bin/bash -e -x install2.sh
