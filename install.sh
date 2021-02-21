@@ -28,8 +28,6 @@ passwd
 grub-install --target=i386-pc /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 exit
-umount -R /mnt
-reboot
 EOF
 
 timedatectl set-ntp true
@@ -45,3 +43,5 @@ reflector -c "US" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist
 pacstrap /mnt base linux linux-firmware
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt /bin/bash -e -x install2.sh
+umount -R /mnt
+echo finished :-) reboot?
