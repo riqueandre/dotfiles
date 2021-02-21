@@ -24,7 +24,8 @@ echo -e "::1        \t  localhost" >> /etc/hosts
 cat /proc/version > /etc/arch-release
 systemctl enable vmware-vmblock-fuse
 systemctl enable vmtoolsd
-passwd
+echo root:password | chpasswd
+passwd root -e
 grub-install --target=i386-pc /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 exit
