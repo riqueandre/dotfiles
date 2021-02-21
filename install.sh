@@ -1,4 +1,5 @@
 timedatectl set-ntp true
+curl https://raw.githubusercontent.com/riqueandre/dotfiles/main/partitions.txt -O partitions.txt
 sfdisk /dev/sda < partitions.txt
 mkfs.ext4 /dev/sda2
 mkswap /dev/sda1
