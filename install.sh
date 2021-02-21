@@ -1,13 +1,13 @@
-cat <<- EOF > partitions.txt
-label: dos
-label-id: 0xbd531635
-device: /dev/sda
-unit: sectors
-sector-size: 512
-
-/dev/sda1 : start=        2048, size=     1048576, type=82
-/dev/sda2 : start=     1050624, size=   166721536, type=83
-EOF
+#cat <<- EOF > partitions.txt
+#label: dos
+#label-id: 0xbd531635
+#device: /dev/sda
+#unit: sectors
+#sector-size: 512
+#
+#/dev/sda1 : start=        2048, size=     1048576, type=82
+#/dev/sda2 : start=     1050624, size=   166721536, type=83
+#EOF
 
 cat <<- EOF > /mnt/install2.sh
 pacman -Syu
@@ -31,8 +31,12 @@ grub-mkconfig -o /boot/grub/grub.cfg
 exit
 EOF
 
+parted -s /dev/sda -- mklabel msdos \
+    mkpart primary linux-swap 1MiB 1.1GiB\
+    mkpart primary ext4 1.1GiB 100% set 1 boot on
+
 timedatectl set-ntp true
-sfdisk /dev/sda < partitions.txt
+#sfdisk /dev/sda < partitions.txt
 mkfs.ext4 /dev/sda2
 mkswap /dev/sda1
 swapon /dev/sda1
