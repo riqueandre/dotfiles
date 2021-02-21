@@ -44,4 +44,4 @@ pacman -S reflector
 reflector -c "US" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist
 pacstrap /mnt base linux linux-firmware
 genfstab -U /mnt >> /mnt/etc/fstab
-arch-chroot /mnt /bin/bash -e -x /second.sh
+arch-chroot /mnt /bin/bash -e -x /install2.sh
