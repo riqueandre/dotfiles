@@ -9,7 +9,7 @@ sector-size: 512
 /dev/sda2 : start=     1050624, size=   166721536, type=83
 EOF
 
-cat <<- EOF > install2.sh
+cat <<- EOF > /mnt/install2.sh
 pacman -Syu
 pacman -S  --noconfirm --needed archlinux-keyring
 pacman -S  --noconfirm --needed base-devel linux-headers asp vi vim nano dhcpcd grub sudo open-vm-tools gtkmm gtkmm3 git wget
