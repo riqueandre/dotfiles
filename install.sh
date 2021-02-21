@@ -1,3 +1,15 @@
+cat <<- EOF > partitions.txt
+label: dos
+label-id: 0xbd531635
+device: /dev/sda
+unit: sectors
+sector-size: 512
+
+/dev/sda1 : start=        2048, size=     1048576, type=82
+/dev/sda2 : start=     1050624, size=   166721536, type=83
+EOF
+
+
 timedatectl set-ntp true
 curl https://raw.githubusercontent.com/riqueandre/dotfiles/main/partitions.txt -O partitions.txt
 sfdisk /dev/sda < partitions.txt
@@ -22,12 +34,9 @@ echo -e "::1        \t  localhost" >> /etc/hosts
 cat /proc/version > /etc/arch-release
 systemctl enable vmware-vmblock-fuse
 systemctl enable vmtoolsd
-Root password
 passwd
-Boot loader
 grub-install --target=i386-pc /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
-Reboot
 exit
 umount -R /mnt
 reboot
