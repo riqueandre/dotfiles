@@ -45,6 +45,7 @@ systemctl enable dhcpcd
 systemctl enable vmware-vmblock-fuse
 systemctl enable vmtoolsd
 
+sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/g' /etc/sudoers
 echo root:root | chpasswd
 
 exit
