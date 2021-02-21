@@ -40,7 +40,7 @@ mkswap /dev/sda1
 swapon /dev/sda1
 mount /dev/sda2 /mnt
 pacman -Syy
-pacman -S reflector
+pacman -S --noconfirm --needed --noprogressbar --quiet reflector
 reflector -c "US" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist
 pacstrap /mnt base linux linux-firmware
 genfstab -U /mnt >> /mnt/etc/fstab
