@@ -18,7 +18,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 cat <<- EOF > /mnt/core.sh
 pacman -Syu
 pacman -S  --noconfirm --needed archlinux-keyring
-pacman -S  --noconfirm --needed base-devel linux-headers asp vi vim nano dhcpcd grub sudo open-vm-tools gtkmm gtkmm3 git wget
+pacman -S  --noconfirm --needed base-devel linux-headers asp vi vim nano dhcpcd grub sudo open-vm-tools gtkmm gtkmm3 git wget man openssh 
 ln -sf /usr/share/zoneinfo/America/Recife /etc/localtime
 hwclock --systohc
 sed -i '/en_US.UTF-8 UTF-8/s/^#//g' /etc/locale.gen
@@ -31,9 +31,11 @@ cat /proc/version > /etc/arch-release
 systemctl enable vmware-vmblock-fuse
 systemctl enable vmtoolsd
 echo root:root | chpasswd
-passwd root -e
 grub-install --target=i386-pc /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
+systemctl enable dhcpcd
+systemctl enable vmware-vmblock-fuse
+systemctl enable vmtoolsd
 exit
 EOF
 
