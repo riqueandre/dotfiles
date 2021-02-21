@@ -1,7 +1,8 @@
 #
 parted -s /dev/sda -- mklabel msdos \
     mkpart primary linux-swap 1MiB 1.1GiB\
-    mkpart primary ext4 1.1GiB 100% set 1 boot on
+    mkpart primary ext4 1.1GiB -1 \ 
+    set 2 boot on
 timedatectl set-ntp true
 mkfs.ext4 /dev/sda2
 mkswap /dev/sda1
