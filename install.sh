@@ -1,9 +1,31 @@
-#
+#!/bin/bash
+
+function get_swap_size() {
+        MEM_TOTAL_GB=$(awk '/Mem:/ {print $4}' <(free -g))
+
+        SWAP_SIZE=0
+
+        if (( MEM_TOTAL_GB < 2 ))
+        then
+                SWAP_SIZE=$((3 * MEM_TOTAL_GB))
+        elif (( MEM_TOTAL_GB >= 2 && MEM_TOTAL_GB <=8 ))
+        then
+                SWAP_SIZE=$((2 * MEM_TOTAL_GB))
+        elif (( MEM_TOTAL_GB > 8 ))
+        then
+                SWAP_SIZE=$((1.5 * MEM_TOTAL_GB))
+        fi
+
+        echo $SWAP_SIZE
+}
+
+echo $(get_swap_size)
+
 timedatectl set-ntp true
 
 parted -s /dev/sda -- mklabel msdos \
-    mkpart primary linux-swap 1MiB 1.1GiB\
-    mkpart primary ext4 1.1GiB -1 \ 
+    mkpart primary linux-swap 2048s $(get_swap_size)GiB \
+    mkpart primary ext4 0 -1 \ 
     set 2 boot on
     
 mkfs.ext4 /dev/sda2
