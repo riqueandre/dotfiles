@@ -18,8 +18,6 @@ function get_swap_size() {
     echo $swap_size
 }
 
-echo $(get_swap_size)
-
 timedatectl set-ntp true
 
 parted -a optimal -s /dev/sda -- mklabel msdos \
