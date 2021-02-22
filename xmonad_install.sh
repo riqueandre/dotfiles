@@ -10,4 +10,4 @@ yay --noconfirm --needed -S ly
 
 pacman -S --noconfirm --needed xmonad xmonad-contrib xmobar
 
-systecmctl enable ly
+systemctl enable ly
