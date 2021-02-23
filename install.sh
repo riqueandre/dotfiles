@@ -42,7 +42,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 cat <<- EOF > /mnt/core.sh
 pacman -Syu
 pacman -S  --noconfirm --needed archlinux-keyring
-pacman -S  --noconfirm --needed base-devel linux-headers asp vi vim nano dhcpcd grub sudo open-vm-tools gtkmm gtkmm3 git wget man openssh
+pacman -S  --noconfirm --needed base-devel linux-headers asp vi vim nano dhcpcd grub sudo open-vm-tools gtkmm gtkmm3 git wget man openssh alsa-utils ttf-dejavu
 
 ln -sf /usr/share/zoneinfo/America/Recife /etc/localtime
 hwclock --systohc
