@@ -42,7 +42,8 @@ genfstab -U /mnt >> /mnt/etc/fstab
 cat <<- EOF > /mnt/core.sh
 pacman -Syu
 pacman -S  --noconfirm --needed archlinux-keyring
-pacman -S  --noconfirm --needed base-devel linux-headers asp vi vim nano dhcpcd grub sudo open-vm-tools gtkmm gtkmm3 git wget man openssh alsa-utils ttf-dejavu pulseaudio paprefs pavucontrol pulseaudio-alsa htop
+pacman -S  --noconfirm --needed base-devel linux-headers asp vi vim nano dhcpcd grub sudo open-vm-tools gtkmm gtkmm3 git wget man openssh alsa-utils ttf-dejavu pulseaudio paprefs pavucontrol pulseaudio-alsa htop syslog-ng
+
 
 ln -sf /usr/share/zoneinfo/America/Recife /etc/localtime
 hwclock --systohc
@@ -60,6 +61,7 @@ cat /proc/version > /etc/arch-release
 grub-install --target=i386-pc /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
+systemctl enable syslog-ng@default
 systemctl enable dhcpcd
 systemctl enable vmware-vmblock-fuse
 systemctl enable vmtoolsd
