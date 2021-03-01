@@ -8,4 +8,4 @@ yay -S i3-gaps alacritty autotiling polybar pfetch i3exit nerd-fonts-complete ne
 
 systemctl enable lightdm
 
-
+#homectl update --shell=$(which zsh) henrique
