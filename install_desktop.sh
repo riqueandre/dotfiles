@@ -9,7 +9,7 @@ cd yay-git
 makepkg -si
 cd ~
 
-yay -S i3-gaps alacritty autotiling polybar pfetch i3exit nerd-fonts-complete networkmanager-dmenu-git siji-gitt ttf-material-design-icons-git numlockx ttf-icomoon-feather
+yay -S i3-gaps alacritty autotiling polybar pfetch i3exit nerd-fonts-complete networkmanager-dmenu-git siji-git ttf-material-design-icons-git numlockx ttf-icomoon-feather
 
 sudo systemctl enable lightdm
 sudo systemctl enable mpd
