@@ -11,6 +11,10 @@ cd ~
 
 yay -S i3-gaps alacritty autotiling polybar pfetch i3exit nerd-fonts-complete networkmanager-dmenu-git siji-git ttf-material-design-icons-git numlockx ttf-icomoon-feather picom-ibhagwan-git
 
+cp -r ~/dotfiles/.config ~/
+cp -r ~/dotfiles/.Xresources ~/
+cp -r ~/dotfiles/fonts .local/share/fonts/
+
 sudo systemctl enable lightdm
 sudo systemctl enable mpd
 sudo systemctl enable NetworkManager
