@@ -1,4 +1,4 @@
-sudo pacman -S --noconfirm --needed xorg-server xorg-xinput xorg-xinit xorg-xfd xorg-xrdb xorg-xsetroot mesa xf86-input-vmmouse xf86-video-vmware
+sudo pacman -S --noconfirm --needed xorg-server xorg-xinput xorg-xinit xorg-xfd xorg-xrdb xorg-xsetroot hsetroot mesa xf86-input-vmmouse xf86-video-vmware
 sudo pacman -S --noconfirm --needed lightdm lightdm-gtk-greeter
 sudo pacman -S --noconfirm --needed i3status i3blocks
 sudo pacman -S --noconfirm --needed rofi imwheel alsa-utils pulseaudio paprefs pavucontrol pulseaudio-alsa nitrogen chromium networkmanager network-manager-applet networkmanager-openvpn unzip python-pywal calc mpd volumeicon xfce4-power-manager polkit-gnome
