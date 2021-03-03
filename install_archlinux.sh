@@ -65,6 +65,7 @@ systemctl enable syslog-ng@default
 systemctl enable dhcpcd
 systemctl enable vmware-vmblock-fuse
 systemctl enable vmtoolsd
+systemctl enable systemd-homed
 
 sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/g' /etc/sudoers
 echo root:root | chpasswd
