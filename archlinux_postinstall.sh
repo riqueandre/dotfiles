@@ -1,7 +1,7 @@
 sudo pacman -S --noconfirm --needed xorg-server xorg-xinput xorg-xinit xorg-xfd xorg-xrdb xorg-xsetroot hsetroot mesa xf86-input-vmmouse xf86-video-vmware
 sudo pacman -S --noconfirm --needed lightdm lightdm-gtk-greeter
 sudo pacman -S --noconfirm --needed i3status i3blocks
-sudo pacman -S --noconfirm --needed rofi imwheel alsa-utils pulseaudio paprefs pavucontrol pulseaudio-alsa nitrogen chromium networkmanager network-manager-applet networkmanager-openvpn unzip python-pywal calc mpd volumeicon xfce4-power-manager polkit-gnome
+sudo pacman -S --noconfirm --needed rofi imwheel alsa-utils pulseaudio paprefs pavucontrol pulseaudio-alsa nitrogen chromium networkmanager network-manager-applet networkmanager-openvpn unzip python-pywal calc mpd volumeicon xfce4-power-manager polkit-gnome nvim
 sudo pacman -S --noconfirm --needed ttf-ubuntu-font-family noto-fonts gsfonts terminus-font nemo gnome-font-viewer ttf-fantasque-sans-mono
 
 git clone https://aur.archlinux.org/yay-git.git
@@ -17,6 +17,11 @@ mkdir -p .local/share
 cp -r ~/dotfiles/.config ~/
 cp -r ~/dotfiles/.Xresources ~/
 cp -r ~/dotfiles/fonts .local/share/fonts/
+
+
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 sudo systemctl enable lightdm
 sudo systemctl enable mpd
