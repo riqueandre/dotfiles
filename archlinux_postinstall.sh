@@ -1,3 +1,6 @@
+#!/bin/bash
+set -e
+
 mkdir -p .config
 mkdir -p .local/share
 
