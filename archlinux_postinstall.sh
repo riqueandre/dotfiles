@@ -32,3 +32,5 @@ cp -r ~/dotfiles/fonts        .local/share/fonts/
 sudo systemctl enable lightdm
 sudo systemctl enable mpd
 sudo systemctl enable NetworkManager
+
+sudo chsh -s $(which zsh)
