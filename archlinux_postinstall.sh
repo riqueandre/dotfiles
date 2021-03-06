@@ -19,9 +19,12 @@ sudo pacman -S --noconfirm --needed ttf-ubuntu-font-family noto-fonts gsfonts te
 
 yay -S i3-gaps alacritty autotiling polybar pfetch i3exit nerd-fonts-complete networkmanager-dmenu-git siji-git ttf-material-design-icons-git numlockx ttf-icomoon-feather picom-ibhagwan-git i3-scrot nvim
 
-cp -r ~/dotfiles/.config ~/
-cp -r ~/dotfiles/.Xresources ~/
-cp -r ~/dotfiles/fonts .local/share/fonts/
+cp -r ~/dotfiles/.imwheelrc   ~/
+cp -r ~/dotfiles/.p10k.zsh    ~/
+cp -r ~/dotfiles/.zshrc       ~/
+cp -r ~/dotfiles/.Xresources  ~/
+cp -r ~/dotfiles/.config      ~/
+cp -r ~/dotfiles/fonts        .local/share/fonts/
 
 sudo systemctl enable lightdm
 sudo systemctl enable mpd
