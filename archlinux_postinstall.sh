@@ -19,6 +19,9 @@ sudo pacman -S --noconfirm --needed ttf-ubuntu-font-family noto-fonts gsfonts te
 
 yay -S i3-gaps alacritty autotiling polybar pfetch i3exit nerd-fonts-complete networkmanager-dmenu-git siji-git ttf-material-design-icons-git numlockx ttf-icomoon-feather picom-ibhagwan-git i3-scrot nvim
 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
 cp -r ~/dotfiles/.imwheelrc   ~/
 cp -r ~/dotfiles/.p10k.zsh    ~/
 cp -r ~/dotfiles/.zshrc       ~/
