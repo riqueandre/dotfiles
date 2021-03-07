@@ -63,7 +63,7 @@ pacman_pkgs=(xorg-server \
 	ttf-fantasque-sans-mono)
 for pkg in "${pacman_pkgs[@]}"
 do
-	sudo pacman -S --noconfirm --needed $pkg 2>> archlinux_postinstall.log
+	sudo pacman -S --noconfirm --needed $pkg
 done
 
 
@@ -81,7 +81,7 @@ yay_pkgs=(i3-gaps \
 
 for pkg in "${yay_pkgs[@]}"
 do
-	yay -S $pkg 2>> archlinux_postinstall.log
+	yay -S $pkg
 done
 
 
