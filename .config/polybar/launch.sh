@@ -15,12 +15,12 @@ launch_bar() {
 
 	# Launch the bar
 	if [[ "$style" == "hack" || "$style" == "cuts" ]]; then
-		IFACE_DEFAULT=$iface_default polybar -q top -c "$dir/$style/config.ini" &
-		IFACE_DEFAULT=$iface_default polybar -q bottom -c "$dir/$style/config.ini" &
+		POLYBAR_STYLE=$style IFACE_DEFAULT=$iface_default polybar -q top -c "$dir/$style/config.ini" &
+		POLYBAR_STYLE=$style IFACE_DEFAULT=$iface_default polybar -q bottom -c "$dir/$style/config.ini" &
 	elif [[ "$style" == "pwidgets" ]]; then
-		bash "$dir"/pwidgets/launch.sh --main
+		POLYBAR_STYLE=$style bash "$dir"/pwidgets/launch.sh --main
 	else
-		IFACE_DEFAULT=$iface_default polybar -q main -c "$dir/$style/config.ini" &	
+		POLYBAR_STYLE=$style IFACE_DEFAULT=$iface_default polybar -q main -c "$dir/$style/config.ini" &	
 	fi
 }
 
