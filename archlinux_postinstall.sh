@@ -41,7 +41,7 @@ pacman_pkgs=(xorg-server \
 	paprefs \
 	pavucontrol \
 	pulseaudio-alsa \
-	nitrogen \
+	feh \
 	chromium  \
 	networkmanager \
 	network-manager-applet \
