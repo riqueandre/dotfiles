@@ -5,7 +5,7 @@ mkdir -p .local/share
 
 if [[ -d $HOME/yay-git ]]
 then
-	echo "skip yay install"
+	echo "skipping yay installation"
 else
 	git clone https://aur.archlinux.org/yay-git.git
 	cd yay-git
@@ -16,7 +16,7 @@ fi
 
 if [[ -d $HOME/dotfiles ]]
 then
-	echo "skip clone dotfiles"
+	echo "skipping clone dotfiles"
 else
 	git clone https://github.com/riqueandre/dotfiles
 fi
@@ -85,8 +85,19 @@ do
 done
 
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+if [[ -d $HOME/.oh-my-zsh ]]
+then
+	echo "skipping oh-my-zsh installation"
+else
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+fi
+
+if [[ -d $HOME/.oh-my-zsh/custom/themes/powerlevel10k ]]
+then
+	echo "skipping p10k installation"
+else
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+fi
 
 cp -r ~/dotfiles/.imwheelrc   ~/
 cp -r ~/dotfiles/.p10k.zsh    ~/
