@@ -81,7 +81,7 @@ yay_pkgs=(i3-gaps \
 
 for pkg in "${yay_pkgs[@]}"
 do
-	yay -S $pkg
+	yay --answerclean None --answerdiff None -S --noconfirm --needed $pkg
 done
 
 
