@@ -34,6 +34,7 @@ pacman_pkgs=(xorg-server \
 	lightdm lightdm-gtk-greeter \
 	i3status \
 	i3blocks \
+	numlockx \
 	rofi \
 	imwheel \
 	alsa-utils \
