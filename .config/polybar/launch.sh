@@ -11,7 +11,7 @@ launch_bar() {
 	while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 	# default interface with route
-	iface_default=$(ip route | grep default | sed -e "s/^.*dev.//" -e "s/.proto.*//")
+	iface_default=$(ip route | grep '^default' | awk '{print $5}' | head -n1)
 
 	# Launch the bar
 	if [[ "$style" == "hack" || "$style" == "cuts" ]]; then
