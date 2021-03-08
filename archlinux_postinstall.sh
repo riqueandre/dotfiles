@@ -74,6 +74,7 @@ yay_pkgs=(i3-gaps \
 	polybar \
 	pfetch \
 	i3exit \
+	rofi-dmenu \
 	nerd-fonts-complete \
 	networkmanager-dmenu-git \
 	siji-git \
