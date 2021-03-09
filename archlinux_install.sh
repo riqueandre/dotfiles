@@ -42,7 +42,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 cat <<- EOF > /mnt/core.sh
 pacman -Syu
 pacman -S  --noconfirm --needed archlinux-keyring
-pacman -S  --noconfirm --needed base-devel linux-headers asp vi vim nano dhcpcd grub sudo open-vm-tools gtkmm gtkmm3 git wget man openssh alsa-utils ttf-dejavu pulseaudio paprefs pavucontrol pulseaudio-alsa htop syslog-ng net-tools zsh
+pacman -S  --noconfirm --needed base-devel linux-headers asp vi vim nano dhcpcd grub sudo open-vm-tools gtkmm gtkmm3 git wget man openssh alsa-utils ttf-dejavu pulseaudio paprefs pavucontrol pulseaudio-alsa htop syslog-ng net-tools zsh mlocate systemd-resolvconf
 
 
 ln -sf /usr/share/zoneinfo/America/Recife /etc/localtime
@@ -65,7 +65,8 @@ systemctl enable syslog-ng@default
 systemctl enable dhcpcd
 systemctl enable vmware-vmblock-fuse
 systemctl enable vmtoolsd
-#systemctl enable systemd-homed
+systemctl enable NetworkManager
+systemctl enable systemd-resolved
 
 sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/g' /etc/sudoers
 echo root:root | chpasswd
