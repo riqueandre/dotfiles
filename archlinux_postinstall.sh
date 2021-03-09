@@ -44,9 +44,7 @@ pacman_pkgs=(xorg-server \
 	pulseaudio-alsa \
 	feh \
 	chromium  \
-	networkmanager \
 	network-manager-applet \
-	networkmanager-openvpn \
 	unzip \
 	python-pywal \
 	calc \
