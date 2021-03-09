@@ -62,7 +62,6 @@ grub-install --target=i386-pc /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable syslog-ng@default
-systemctl enable dhcpcd
 systemctl enable vmware-vmblock-fuse
 systemctl enable vmtoolsd
 systemctl enable NetworkManager
