@@ -59,6 +59,7 @@ pacman_pkgs=(xorg-server \
 	terminus-font \
 	nemo \
 	gnome-font-viewer \
+    ncmpcpp \
 	ttf-fantasque-sans-mono)
 for pkg in "${pacman_pkgs[@]}"
 do
@@ -77,6 +78,8 @@ yay_pkgs=(i3-gaps \
 	networkmanager-dmenu-git \
 	siji-git \
 	picom-ibhagwan-git \
+    tty-clock \
+    cava \
 	i3-scrot)
 
 for pkg in "${yay_pkgs[@]}"
