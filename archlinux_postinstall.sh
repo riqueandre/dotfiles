@@ -49,6 +49,7 @@ pacman_pkgs=(xorg-server \
 	python-pywal \
 	calc \
 	mpd \
+    dunst \
 	volumeicon \
 	xfce4-power-manager \
 	polkit-gnome \
