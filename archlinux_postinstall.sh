@@ -59,6 +59,7 @@ pacman_pkgs=(xorg-server \
 	gsfonts \
 	terminus-font \
 	nemo \
+    exo \
 	gnome-font-viewer \
     ncmpcpp \
 	ttf-fantasque-sans-mono)
