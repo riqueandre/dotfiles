@@ -62,7 +62,7 @@ bindsym $mod+Return exec $myTerm
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id ~/.config/polybar/scripts/launcher.sh cuts
+bindsym $mod+d exec --no-startup-id ~/.config/polybar/scripts/launcher.sh
 
 # launch categorized menu
 bindsym $mod+' exec --no-startup-id morc_menu
@@ -93,6 +93,7 @@ bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+bindsym $mod+0 --release exec "~/.config/polybar/scripts/powermenu.sh &"
 
 # focus_follows_mouse no
 
@@ -250,21 +251,22 @@ bindsym $mod+Shift+r restart
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Set shut down, restart and locking features
-bindsym $mod+0 mode "$mode_system"
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
-mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+#
+# bindsym $mod+0 mode "$mode_system"
+# set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+# mode "$mode_system" {
+#    bindsym l exec --no-startup-id i3exit lock, mode "default"
+#    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+#    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+#    bindsym e exec --no-startup-id i3exit logout, mode "default"
+#    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+#    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+#    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 
     # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
+#    bindsym Return mode "default"
+#    bindsym Escape mode "default"
+#}
 
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
@@ -297,7 +299,7 @@ bindsym $mod+9 exec --no-startup-id blurlock
 # Autostart applications
 exec_always --no-startup-id feh --no-fehbg --bg-scale ~/.config/background-images/Vm83FeC.png
 exec_always --no-startup-id autotiling
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh --cuts
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id imwheel
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
