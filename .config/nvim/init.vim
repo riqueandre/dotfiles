@@ -5,8 +5,9 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
 endif
 
 call plug#begin(stdpath('data') . '/plugged')
-	Plug 'sonph/onehalf', { 'rtp': 'vim' }
+    Plug 'sonph/onehalf', { 'rtp': 'vim' }
     Plug 'jiangmiao/auto-pairs'
+    Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 
@@ -16,6 +17,7 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
+runtime! ftplugin/man.vim
 
 colorscheme onehalfdark
 syntax on
@@ -41,3 +43,9 @@ set autoread                            " Automatically reread changed files wit
 set incsearch
 set hlsearch
 set inccommand=split
+set laststatus=2
+set keywordprg=:Man
+set showcmd
+
+" change the leader key from "\" to ";" ("," is also popular)
+let mapleader=";"
