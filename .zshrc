@@ -114,3 +114,7 @@ source $ZSH/oh-my-zsh.sh
 
 [[ ! -f /usr/share/fzf/key-bindings.zsh ]] || source /usr/share/fzf/key-bindings.zsh
 [[ ! -f /usr/share/fzf/completion.zsh ]]   || source /usr/share/fzf/completion.zsh
+
+alias vim="nvim"
+alias vi="nvim"
+zstyle ':completion:*' rehash true
