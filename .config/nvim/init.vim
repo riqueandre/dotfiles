@@ -1,15 +1,14 @@
-
-" Vim-plug Automatic installation
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" pluggins dir
 call plug#begin(stdpath('data') . '/plugged')
 	Plug 'sonph/onehalf', { 'rtp': 'vim' }
+    Plug 'jiangmiao/auto-pairs'
 call plug#end()
+
 
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -39,3 +38,6 @@ set nobackup            	            " Don't create annoying backup files
 set encoding=utf-8                      " Set default encoding to UTF-8
 set autowrite                           " Automatically save before :next, :make etc.
 set autoread                            " Automatically reread changed files without asking me anything
+set incsearch
+set hlsearch
+set inccommand=split
