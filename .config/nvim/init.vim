@@ -8,6 +8,11 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'sonph/onehalf', { 'rtp': 'vim' }
     Plug 'jiangmiao/auto-pairs'
     Plug 'sheerun/vim-polyglot'
+    Plug 'tpope/vim-surround'
+    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'preservim/nerdtree'
+    Plug 'preservim/nerdcommenter'
+    Plug 'matze/vim-move'
 call plug#end()
 
 
@@ -46,6 +51,18 @@ set inccommand=split
 set laststatus=2
 set keywordprg=:Man
 set showcmd
+set ignorecase
+set infercase
+set timeoutlen=3000
 
 " change the leader key from "\" to ";" ("," is also popular)
+map <silent> <F5> :NERDTreeToggle<CR>
+
 let mapleader=";"
+noremap <silent> <leader>q  :helpclose<CR>
+
+" cycle buffers
+noremap <silent> <leader>h  :bp<CR>
+noremap <silent> <leader>l  :bn<CR>
+
+let g:move_key_modifier = 'C'
