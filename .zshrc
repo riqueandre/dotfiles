@@ -117,4 +117,5 @@ source $ZSH/oh-my-zsh.sh
 
 alias vim="nvim"
 alias vi="nvim"
+alias cat="bat"
 zstyle ':completion:*' rehash true

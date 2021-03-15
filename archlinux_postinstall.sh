@@ -43,6 +43,7 @@ pacman_pkgs=(xorg-server \
 	pavucontrol \
 	pulseaudio-alsa \
 	feh \
+    bat \
 	chromium  \
 	network-manager-applet \
 	unzip \
