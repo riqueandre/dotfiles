@@ -117,5 +117,5 @@ source $ZSH/oh-my-zsh.sh
 
 alias vim="nvim"
 alias vi="nvim"
-alias cat="bat"
+alias cat="bat --paging=never"
 zstyle ':completion:*' rehash true
