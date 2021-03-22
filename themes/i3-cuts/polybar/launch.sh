@@ -1,20 +1,15 @@
 #!/usr/bin/env bash
 
-dir="$HOME/.config/polybar"
-themes=(`ls --hide="launch.sh" $dir`)
+# Add this script to your wm startup file.
 
-launch_bar() {
-	# Terminate already running bar instances
-	killall -q polybar
+DIR="$HOME/.config/polybar"
 
-	# Wait until the processes have been shut down
-	while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+# Terminate already running bar instances
+killall -q polybar
 
-	# default interface with route
-	iface_default=$(ip route | grep '^default' | awk '{print $5}' | head -n1)
+# Wait until the processes have been shut down
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-	IFACE_DEFAULT=$iface_default polybar -q top -c "$dir/cuts/config.ini" &
-	IFACE_DEFAULT=$iface_default polybar -q bottom -c "$dir/cuts/config.ini" &
-}
-
-launch_bar
+# Launch the bar
+polybar -q top -c "$DIR"/config.ini &
+polybar -q bottom -c "$DIR"/config.ini &

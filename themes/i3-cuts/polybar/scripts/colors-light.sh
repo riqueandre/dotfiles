@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Color files
-PFILE="$HOME/.config/polybar/cuts/colors.ini"
-RFILE="$HOME/.config/polybar/cuts/rofi/colors.rasi"
+PFILE="$HOME/.config/polybar/colors.ini"
+RFILE="$HOME/.config/polybar/rofi/colors.rasi"
 
 BG="FFFFFF"
 FG="0A0A0A"
