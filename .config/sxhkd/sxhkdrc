@@ -3,7 +3,7 @@
 #######################
 
 # terminal emulator
-super + Return
+alt + Return
   alacritty
 
 # program launcher
@@ -11,6 +11,10 @@ alt + @space
 	rofi -show drun
 alt + shift+ @space
 	rofi -show run
+
+# power menu
+alt + 0
+    rofi -show power-menu -modi power-menu:rofi-power-menu
 
 # Screenshot
 Print
