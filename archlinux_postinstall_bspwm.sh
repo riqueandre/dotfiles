@@ -26,6 +26,7 @@ pacman_pkgs=(xorg-server \
     xorg-xinput xorg-xinit \
     xorg-xfd \
     xorg-xrdb \
+    xdg-user-dirs \
     xss-lock \
     xorg-xsetroot \
     hsetroot \
@@ -47,7 +48,6 @@ pacman_pkgs=(xorg-server \
     python-pip \
     feh \
     bat \
-    chromium  \
     network-manager-applet \
     unzip \
     python-pywal \
@@ -76,6 +76,7 @@ done
 
 yay_pkgs=(alacritty \
     autotiling \
+    google-chrome \
     polybar \
     pfetch \
     rofi-dmenu \
@@ -125,6 +126,9 @@ sudo systemctl enable mpd
 
 
 pip install dbus-python
+
+
+xdg-user-dir-update
 
 
 chsh -s $(which zsh)

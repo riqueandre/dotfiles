@@ -27,6 +27,7 @@ pacman_pkgs=(xorg-server \
     xorg-xfd \
     xorg-xrdb \
     xorg-xsetroot \
+    xdg-user-dirs \
     xss-lock \
     hsetroot \
     mesa \
@@ -45,7 +46,6 @@ pacman_pkgs=(xorg-server \
     pulseaudio-alsa \
     feh \
     bat \
-    chromium  \
     network-manager-applet \
     unzip \
     python-pywal \
@@ -74,6 +74,7 @@ done
 yay_pkgs=(i3-gaps \
     alacritty \
     autotiling \
+    google-chrome \
     polybar \
     pfetch \
     i3exit \
@@ -122,6 +123,9 @@ cp -r ~/dotfiles/themes/i3-cuts/rofi           ~/.config/
 
 sudo systemctl enable lightdm
 sudo systemctl enable mpd
+
+
+xdg-user-dir-update
 
 
 chsh -s $(which zsh)
