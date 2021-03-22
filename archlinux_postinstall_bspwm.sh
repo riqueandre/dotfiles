@@ -124,4 +124,7 @@ sudo systemctl enable lightdm
 sudo systemctl enable mpd
 
 
+pip install dbus-python
+
+
 chsh -s $(which zsh)
