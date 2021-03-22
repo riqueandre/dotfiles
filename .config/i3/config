@@ -294,7 +294,7 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+9 exec --no-startup-id blurlock
+bindsym $mod+9 exec --no-startup-id xss-lock blurlock
 
 # Autostart applications
 exec_always --no-startup-id feh --no-fehbg --bg-scale ~/.config/background-images/Vm83FeC.png
@@ -307,6 +307,7 @@ exec --no-startup-id numlockx off
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id vmware-user-suid-wrapper
+exec --no-startup-id xss-lock blurlock
 #exec_always --no-startup-id setxkbmap -layout br -variant abnt2
 
 # Color palette used for the terminal ( ~/.Xresources file )

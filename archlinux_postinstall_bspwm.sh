@@ -26,6 +26,7 @@ pacman_pkgs=(xorg-server \
     xorg-xinput xorg-xinit \
     xorg-xfd \
     xorg-xrdb \
+    xss-lock \
     xorg-xsetroot \
     hsetroot \
     mesa \

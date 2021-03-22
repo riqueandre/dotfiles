@@ -27,6 +27,7 @@ pacman_pkgs=(xorg-server \
     xorg-xfd \
     xorg-xrdb \
     xorg-xsetroot \
+    xss-lock \
     hsetroot \
     mesa \
     xf86-input-vmmouse \
