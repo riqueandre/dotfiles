@@ -104,12 +104,13 @@ else
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 fi
 
+
 cp -r ~/dotfiles/.imwheelrc                         ~/
 cp -r ~/dotfiles/.p10k.zsh                          ~/
 cp -r ~/dotfiles/.zshrc                             ~/
 cp -r ~/dotfiles/.zshenv                            ~/
 cp -r ~/dotfiles/.config                            ~/
-cp -r ~/dotfiles/fonts                              ~/.local/share/fonts/
+cp -r ~/dotfiles/.local/                            ~/
 cp -r ~/dotfiles/themes/bspwm-b4skyx/.Xresources    ~/
 cp -r ~/dotfiles/themes/bspwm-b4skyx/polybar        ~/.config/
 cp -r ~/dotfiles/themes/bspwm-b4skyx/picom          ~/.config/

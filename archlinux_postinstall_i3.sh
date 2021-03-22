@@ -110,7 +110,7 @@ cp -r ~/dotfiles/.p10k.zsh                  ~/
 cp -r ~/dotfiles/.zshrc                     ~/
 cp -r ~/dotfiles/.zshenv                    ~/
 cp -r ~/dotfiles/.config                    ~/
-cp -r ~/dotfiles/fonts                      ~/.local/share/fonts/
+cp -r ~/dotfiles/.local/                    ~/
 cp -r ~/dotfiles/themes/i3-cuts/.Xresources ~/
 cp -r ~/dotfiles/themes/i3-cuts/polybar     ~/.config/
 cp -r ~/dotfiles/themes/i3-cuts/picom       ~/.config/
