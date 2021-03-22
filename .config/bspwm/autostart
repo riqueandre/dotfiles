@@ -1,0 +1,4 @@
+#!/bin/sh
+# Applications
+xrdb ~/.Xresources
+vmware-user-suid-wrapper &

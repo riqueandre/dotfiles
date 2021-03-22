@@ -32,8 +32,8 @@ pacman_pkgs=(xorg-server \
     xf86-input-vmmouse \
     xf86-video-vmware \
     lightdm lightdm-gtk-greeter \
-    bspwm \
-    papirus-icon-theme \
+    i3status \
+    i3blocks \
     numlockx \
     rofi \
     imwheel \
@@ -42,7 +42,6 @@ pacman_pkgs=(xorg-server \
     paprefs \
     pavucontrol \
     pulseaudio-alsa \
-    python-pip \
     feh \
     bat \
     chromium  \
@@ -64,7 +63,6 @@ pacman_pkgs=(xorg-server \
     exo \
     gnome-font-viewer \
     ncmpcpp \
-    python-pip \
     ttf-fantasque-sans-mono)
 for pkg in "${pacman_pkgs[@]}"
 do
@@ -72,18 +70,21 @@ do
 done
 
 
-yay_pkgs=(alacritty \
+yay_pkgs=(i3-gaps \
+    alacritty \
     autotiling \
     polybar \
     pfetch \
+    i3exit \
     rofi-dmenu \
-    ttf-sarasa-gothic \
     nerd-fonts-complete \
     networkmanager-dmenu-git \
     siji-git \
     picom-ibhagwan-git \
     tty-clock \
-    cava)
+    cava \
+    i3-scrot)
+
 for pkg in "${yay_pkgs[@]}"
 do
     yay --answerclean None --answerdiff None -S --noconfirm --needed $pkg
@@ -104,18 +105,16 @@ else
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 fi
 
-cp -r ~/dotfiles/.imwheelrc                         ~/
-cp -r ~/dotfiles/.p10k.zsh                          ~/
-cp -r ~/dotfiles/.zshrc                             ~/
-cp -r ~/dotfiles/.zshenv                            ~/
-cp -r ~/dotfiles/.config                            ~/
-cp -r ~/dotfiles/fonts                              ~/.local/share/fonts/
-cp -r ~/dotfiles/themes/bspwm-b4skyx/.Xresources    ~/
-cp -r ~/dotfiles/themes/bspwm-b4skyx/polybar        ~/.config/
-cp -r ~/dotfiles/themes/bspwm-b4skyx/picom          ~/.config/
-cp -r ~/dotfiles/themes/bspwm-b4skyx/dunst          ~/.config/
-cp -r ~/dotfiles/themes/bspwm-b4skyx/rofi           ~/.config/
-
+cp -r ~/dotfiles/.imwheelrc                 ~/
+cp -r ~/dotfiles/.p10k.zsh                  ~/
+cp -r ~/dotfiles/.zshrc                     ~/
+cp -r ~/dotfiles/.zshenv                    ~/
+cp -r ~/dotfiles/.config                    ~/
+cp -r ~/dotfiles/fonts                      ~/.local/share/fonts/
+cp -r ~/dotfiles/themes/i3-cuts/.Xresources ~/
+cp -r ~/dotfiles/themes/i3-cuts/polybar     ~/.config/
+cp -r ~/dotfiles/themes/i3-cuts/picom       ~/.config/
+cp -r ~/dotfiles/themes/i3-cuts/dunst       ~/.config/
 
 sudo systemctl enable lightdm
 sudo systemctl enable mpd
