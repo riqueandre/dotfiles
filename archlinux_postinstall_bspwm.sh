@@ -121,4 +121,5 @@ cp -r ~/dotfiles/themes/bspwm-b4skyx/rofi           ~/.config/
 sudo systemctl enable lightdm
 sudo systemctl enable mpd
 
+
 chsh -s $(which zsh)

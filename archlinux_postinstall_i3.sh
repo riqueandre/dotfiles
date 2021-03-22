@@ -105,18 +105,22 @@ else
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 fi
 
-cp -r ~/dotfiles/.imwheelrc                 ~/
-cp -r ~/dotfiles/.p10k.zsh                  ~/
-cp -r ~/dotfiles/.zshrc                     ~/
-cp -r ~/dotfiles/.zshenv                    ~/
-cp -r ~/dotfiles/.config                    ~/
-cp -r ~/dotfiles/.local/                    ~/
-cp -r ~/dotfiles/themes/i3-cuts/.Xresources ~/
-cp -r ~/dotfiles/themes/i3-cuts/polybar     ~/.config/
-cp -r ~/dotfiles/themes/i3-cuts/picom       ~/.config/
-cp -r ~/dotfiles/themes/i3-cuts/dunst       ~/.config/
+
+cp -r ~/dotfiles/.imwheelrc                    ~/
+cp -r ~/dotfiles/.p10k.z                       ~/
+cp -r ~/dotfiles/.zshrc                        ~/
+cp -r ~/dotfiles/.zshenv                       ~/
+cp -r ~/dotfiles/.config                       ~/
+cp -r ~/dotfiles/.local/                       ~/
+cp -r ~/dotfiles/themes/i3-cuts/.Xresources    ~/
+cp -r ~/dotfiles/themes/i3-cuts/polybar        ~/.config/
+cp -r ~/dotfiles/themes/i3-cuts/picom          ~/.config/
+cp -r ~/dotfiles/themes/i3-cuts/dunst          ~/.config/
+cp -r ~/dotfiles/themes/i3-cuts/rofi           ~/.config/
+
 
 sudo systemctl enable lightdm
 sudo systemctl enable mpd
+
 
 chsh -s $(which zsh)
