@@ -34,6 +34,7 @@ pacman_pkgs=(xorg-server \
     xf86-video-vmware \
     lightdm lightdm-gtk-greeter \
     bspwm \
+    sxhkd \
     papirus-icon-theme \
     numlockx \
     rofi \
