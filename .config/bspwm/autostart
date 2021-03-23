@@ -1,5 +1,7 @@
 #!/bin/sh
 # Applications
 xrdb ~/.Xresources
+~/.config/conky/start-conky.sh &
 vmware-user-suid-wrapper &
-imwheel
+imwheel &
+nm-applet &
