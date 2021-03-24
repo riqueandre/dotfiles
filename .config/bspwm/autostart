@@ -1,7 +1,7 @@
 #!/bin/sh
 # Applications
 xrdb ~/.Xresources
-~/.config/conky/start-conky.sh &
+pgrep conky || ~/.config/conky/start-conky.sh &
 vmware-user-suid-wrapper &
 imwheel &
 nm-applet &
