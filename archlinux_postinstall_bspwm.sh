@@ -36,6 +36,7 @@ pacman_pkgs=(xorg-server \
     lightdm lightdm-gtk-greeter \
     bspwm \
     sxhkd \
+    conky \
     papirus-icon-theme \
     numlockx \
     rofi \

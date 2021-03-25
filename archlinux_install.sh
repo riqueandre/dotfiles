@@ -43,7 +43,7 @@ cat <<- EOF > /mnt/core.sh
 sed -i '/Color/s/^#//g' /etc/pacman.conf 
 pacman -Syu
 pacman -S  --noconfirm --needed archlinux-keyring
-pacman -S  --noconfirm --needed base-devel linux-headers asp vi vim nano dhcpcd grub sudo open-vm-tools gtkmm gtkmm3 git wget man openssh alsa-utils ttf-dejavu pulseaudio paprefs pavucontrol pulseaudio-alsa htop syslog-ng net-tools zsh fzf mlocate networkmanager systemd-resolvconf networkmanager-openvpn
+pacman -S  --noconfirm --needed base-devel linux-headers asp vi vim nano dhcpcd grub sudo open-vm-tools gtkmm gtkmm3 git wget man openssh alsa-utils ttf-dejavu pulseaudio paprefs pavucontrol pulseaudio-alsa htop syslog-ng net-tools zsh fzf mlocate networkmanager systemd-resolvconf networkmanager-openvpn lsof zip
 
 ln -sf /usr/share/zoneinfo/America/Recife /etc/localtime
 hwclock --systohc
