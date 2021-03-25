@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo echo starting ...
+
 case $1 in
     i3)
         wm_selected="i3status i3blocks i3-gaps i3exit i3-scrot autotiling"
@@ -40,35 +42,35 @@ fi
 
 
 pkgs_video="
-    mesa 
-    xf86-input-vmmouse 
-    xf86-video-vmware 
-    xfce4-power-manager 
-    xorg-server 
-    xorg-xfd 
-    xorg-xinput xorg-xinit 
-    xorg-xrdb 
-    xorg-xsetroot 
+    mesa
+    xf86-input-vmmouse
+    xf86-video-vmware
+    xfce4-power-manager
+    xorg-server
+    xorg-xfd
+    xorg-xinput xorg-xinit
+    xorg-xrdb
+    xorg-xsetroot
     "
 
 pkgs_dm="
-    lightdm 
-    lightdm-gtk-greeter 
+    lightdm
+    lightdm-gtk-greeter
     "
 
 
 pkgs_wm="
-    ${wm_selected} 
-    picom-ibhagwan-git 
-    dunst 
-    rofi 
-    rofi-dmenu 
-    polybar 
+    ${wm_selected}
+    picom-ibhagwan-git
+    dunst
+    rofi
+    rofi-dmenu
+    polybar
     "
 
 pkgs_audio="
-    alsa-utils 
-    volumeicon 
+    alsa-utils
+    volumeicon
     pavucontrol
     paprefs
     cava
@@ -93,7 +95,7 @@ pkgs_util="
     alacritty
     unzip
     xdg-user-dirs
-    xss-lock 
+    xss-lock
     conky
     exo
     google-chrome
@@ -127,13 +129,13 @@ pkgs_dev="
 
 
 pkgs="
-    ${pkgs_video}   
-    ${pkgs_dm}      
-    ${pkgs_wm}      
-    ${pkgs_audio}   
-    ${pkgs_network} 
-    ${pkgs_util}    
-    ${pkgs_fonts}   
+    ${pkgs_video}
+    ${pkgs_dm}
+    ${pkgs_wm}
+    ${pkgs_audio}
+    ${pkgs_network}
+    ${pkgs_util}
+    ${pkgs_fonts}
     ${pkgs_dev}
     "
 sudo pamac install --no-confirm $pkgs
@@ -169,7 +171,7 @@ case $1 in
     cp -r ~/dotfiles/themes/i3-cuts/polybar        ~/.config/
     cp -r ~/dotfiles/themes/i3-cuts/picom          ~/.config/
     cp -r ~/dotfiles/themes/i3-cuts/dunst          ~/.config/
-    cp -r ~/dotfiles/themes/i3-cuts/rofi           ~/.config/      
+    cp -r ~/dotfiles/themes/i3-cuts/rofi           ~/.config/
     ;;
   bspwm)
     cp -r ~/dotfiles/themes/bspwm-b4skyx/.Xresources    ~/
