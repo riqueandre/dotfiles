@@ -69,13 +69,8 @@ pkgs_wm="
     "
 
 pkgs_audio="
-    alsa-utils
     volumeicon
-    pavucontrol
-    paprefs
     cava
-    pulseaudio
-    pulseaudio-alsa
     "
 
 pkgs_network="
