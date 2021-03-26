@@ -54,17 +54,11 @@ bspc rule -a flameshot state='floating'
 bspc rule -a *:SPLASH state=floating
 bspc desktop -f 1
 
-# INIT-DAEMONS
-xsetroot -cursor_name left_ptr &
-sxhkd &
-# xcompmgr -cCfF -t -2 -l -2 -r 2.8 -o 0.55 -D 5 &
-picom &
-dunst &
-
 # Replace caps lock with Esc
 setxkbmap -option caps:backspace
 
-# AUTOSTART
 hsetroot -cover ~/.config/background-images/wallpaper.jpg &
 ~/.config/polybar/launch.sh &
+
+# AUTOSTART
 ~/.config/bspwm/autostart &

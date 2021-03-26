@@ -1,9 +1,17 @@
 #!/bin/sh
-# Applications
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# INIT-DAEMONS
 xrdb ~/.Xresources
-pgrep conky || ~/.config/conky/start-conky.sh &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+xsetroot -cursor_name left_ptr &
+sxhkd &
+picom &
 vmware-user-suid-wrapper &
+xss-lock blurlock &
+
+# Applications
+dunst &
 imwheel &
 nm-applet &
 pamac-tray &
+pgrep conky || ~/.config/conky/start-conky.sh &
