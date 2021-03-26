@@ -61,16 +61,16 @@ pkgs_dm="
 
 pkgs_wm="
     ${wm_selected}
-    picom-ibhagwan-git
     dunst
+    picom-ibhagwan-git
+    polybar
     rofi
     rofi-dmenu
-    polybar
     "
 
 pkgs_audio="
-    volumeicon
     cava
+    volumeicon
     "
 
 pkgs_network="
@@ -80,46 +80,46 @@ pkgs_network="
 
 
 pkgs_util="
-    numlockx
+    alacritty
     bat
     calc
-    feh
-    gnome-font-viewer
-    nemo
-    neovim
-    alacritty
-    unzip
-    xdg-user-dirs
-    xss-lock
     conky
     exo
+    feh
+    gnome-font-viewer
     google-chrome
     hsetroot
     imwheel
     mpd
     ncmpcpp
+    nemo
+    neovim
+    numlockx
     papirus-icon-theme
     pfetch
     polkit-gnome
+    unzip
+    xdg-user-dirs
+    xss-lock
     "
 
 
 pkgs_fonts="
+    gsfonts
+    nerd-fonts-complete
+    noto-fonts
     siji-git
     terminus-font
     ttf-fantasque-sans-mono
     ttf-sarasa-gothic
     ttf-ubuntu-font-family
-    nerd-fonts-complete
-    noto-fonts
-    gsfonts
     "
 
 
 pkgs_dev="
-    python-pip
     openjdk11-doc
     openjdk11-src
+    python-pip
     "
 
 
