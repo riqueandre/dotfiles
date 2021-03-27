@@ -3,13 +3,13 @@
 #######################
 
 # terminal emulator
-alt + Return
+super + Return
   alacritty
 
 # program launcher
-alt + @space
+super + @space
 	rofi -show drun
-alt + shift+ @space
+super + shift+ @space
 	rofi -show run
 
 # power menu
