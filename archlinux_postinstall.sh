@@ -70,7 +70,6 @@ pkgs_wm="
 
 pkgs_audio="
     cava
-    volumeicon
     "
 
 pkgs_network="
