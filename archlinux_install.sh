@@ -18,6 +18,40 @@ function get_swap_size() {
     echo $swap_size
 }
 
+### setup root
+unset root_password
+prompt="[ root ] password: "
+while IFS= read -p "$prompt" -r -s -n 1 char
+do
+    if [[ $char == $'\0' ]]
+    then
+        break
+    fi
+    prompt='*'
+    root_password+="$char"
+done
+echo
+
+### setup default user system
+echo -n "[ system user ] username: "
+read userdef_username 
+
+unset userdef_password
+prompt="[ system user ] password: "
+while IFS= read -p "$prompt" -r -s -n 1 char
+do
+    if [[ $char == $'\0' ]]
+    then
+        break
+    fi
+    prompt='*'
+    userdef_password+="$char"
+done
+echo
+
+exit 0
+
+### begin install
 timedatectl set-ntp true
 
 parted -a optimal -s /dev/sda -- mklabel msdos \
@@ -56,6 +90,8 @@ pacman -S  --noconfirm --needed alsa-utils \
                                 linux-headers \
                                 lsof \
                                 man \
+                                man-pages \
+                                man-pages-pt_br \
                                 mlocate \
                                 nano \
                                 net-tools \
@@ -101,7 +137,10 @@ systemctl enable NetworkManager
 systemctl enable systemd-resolved
 
 sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/g' /etc/sudoers
-echo root:root | chpasswd
+echo root:${root_password} | chpasswd
+
+useradd -m ${userdef_username} -p ${userdef_password}
+usermod -G wheel ${userdef_username}
 
 exit
 EOF
