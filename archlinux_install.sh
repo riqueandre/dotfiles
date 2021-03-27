@@ -49,8 +49,6 @@ do
 done
 echo
 
-exit 0
-
 ### begin install
 timedatectl set-ntp true
 
@@ -84,7 +82,7 @@ pacman -S  --noconfirm --needed alsa-utils \
                                 fzf \
                                 git \
                                 grub \
-                                gtkmm 
+                                gtkmm \
                                 gtkmm3 \
                                 htop \
                                 linux-headers \
