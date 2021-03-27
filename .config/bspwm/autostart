@@ -14,4 +14,4 @@ dunst &
 imwheel &
 nm-applet &
 pamac-tray &
-pgrep conky || ~/.config/conky/start-conky.sh &
+~/.config/conky/start-conky.sh &
