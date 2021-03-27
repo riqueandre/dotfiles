@@ -139,7 +139,7 @@ systemctl enable NetworkManager
 systemctl enable systemd-resolved
 
 sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/g' /etc/sudoers
-echo root:${root_password_crypt} | chpasswd -e
+echo "root:${root_password_crypt}" | chpasswd -e
 
 useradd -m ${userdef_username} -p ${userdef_password_crypt}
 usermod -G wheel ${userdef_username}
