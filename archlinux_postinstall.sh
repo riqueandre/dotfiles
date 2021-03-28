@@ -135,6 +135,8 @@ pkgs_util="
     papirus-icon-theme
     pfetch
     polkit-gnome
+    pulsemixer
+    tdrop-git
     unzip
     xdg-user-dirs
     xss-lock
