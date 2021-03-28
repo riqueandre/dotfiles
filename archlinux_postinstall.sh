@@ -182,6 +182,8 @@ case $wm in
 esac
 
 
+sudo sed -i 's/#display-setup-script=/display-setup-script=/usr/bin/vmware-user-suid-wrapper/g' /etc/lightdm/lightdm.conf 
+
 sudo systemctl enable lightdm
 sudo systemctl enable mpd
 
