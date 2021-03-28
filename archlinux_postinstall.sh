@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "1) bspwm 	2) i3"
+read -r -p "Choose your WM: " wm
 case $wm in 
     1)
         wm_selected='i3status i3blocks i3-gaps i3exit i3-scrot autotiling'
@@ -15,12 +17,11 @@ case $wm in
         ;;
 esac
 
+
 # does full system update
 echo "Doing a system update"
 sudo pacman --noconfirm -Syu
 
-echo "1) bspwm 	2) i3"
-read -r -p "Choose your WM: " wm
 
 mkdir -p .config
 mkdir -p .local/share
