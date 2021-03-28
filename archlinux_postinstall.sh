@@ -10,15 +10,15 @@ read -r -p "Choose your WM: " wm
 case $wm in 
 [1])
     wm_selected='i3status i3blocks i3-gaps i3exit i3-scrot autotiling'
-	;;
+    ;;
 
 [2])
-	wm_selected='bspwm sxhkd'
-	;;
+    wm_selected='bspwm sxhkd'
+    ;;
 [*])
     echo "Select bspwm or i3"
     exit 0
-	;;
+    ;;
 esac
 
 mkdir -p .config
