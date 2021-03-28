@@ -108,7 +108,6 @@ pkgs_util="
 
 pkgs_fonts="
     gsfonts
-    nerd-fonts-complete
     nerd-fonts-fira-code
     nerd-fonts-fira-mono
     nerd-fonts-jetbrains-mono
