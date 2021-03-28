@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo echo "1) bspwm 	2) i3"
+echo "1) bspwm 	2) i3"
 read -r -p "Choose your WM: " wm
 case $wm in 
     1)
@@ -165,20 +165,20 @@ cp -r ~/dotfiles/.zshrc                             ~/
 cp -r ~/dotfiles/.zshenv                            ~/
 cp -r ~/dotfiles/.config                            ~/
 cp -r ~/dotfiles/.local/                            ~/
-case $1 in
-  i3)
-    cp -r ~/dotfiles/themes/i3-cuts/.Xresources    ~/
-    cp -r ~/dotfiles/themes/i3-cuts/polybar        ~/.config/
-    cp -r ~/dotfiles/themes/i3-cuts/picom          ~/.config/
-    cp -r ~/dotfiles/themes/i3-cuts/dunst          ~/.config/
-    cp -r ~/dotfiles/themes/i3-cuts/rofi           ~/.config/
-    ;;
-  bspwm)
+case $wm in
+  1)
     cp -r ~/dotfiles/themes/bspwm-b4skyx/.Xresources    ~/
     cp -r ~/dotfiles/themes/bspwm-b4skyx/polybar        ~/.config/
     cp -r ~/dotfiles/themes/bspwm-b4skyx/picom          ~/.config/
     cp -r ~/dotfiles/themes/bspwm-b4skyx/dunst          ~/.config/
     cp -r ~/dotfiles/themes/bspwm-b4skyx/rofi           ~/.config/
+    ;;
+  2)
+    cp -r ~/dotfiles/themes/i3-cuts/.Xresources    ~/
+    cp -r ~/dotfiles/themes/i3-cuts/polybar        ~/.config/
+    cp -r ~/dotfiles/themes/i3-cuts/picom          ~/.config/
+    cp -r ~/dotfiles/themes/i3-cuts/dunst          ~/.config/
+    cp -r ~/dotfiles/themes/i3-cuts/rofi           ~/.config/
     ;;
 esac
 
