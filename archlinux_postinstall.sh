@@ -1,8 +1,9 @@
 #!/bin/bash
 
-echo "1) bspwm    2) i3"
+
+echo "1) bspwm  2) i3"
 read -r -p "Choose your WM: " wm
-case $wm in 
+case $wm in
     1)
         wm_selected='bspwm sxhkd'
         echo 'installing bspwm'
@@ -17,9 +18,10 @@ case $wm in
         ;;
 esac
 
-echo "1) b4skyx    2) cut    3) not install"
+
+echo "1) b4skyx	 2) cut  3) not install"
 read -r -p "Choose your theme: " wm_theme
-case $wm_theme in 
+case $wm_theme in
     1)
         wm_theme_actions="
                          cp -r ~/dotfiles/themes/bspwm-b4skyx/.Xresources    ~/         ;
@@ -62,7 +64,7 @@ else
     cd pamac-aur
     makepkg -si --noconfirm
     sudo sed -i '/EnableAUR/s/^#//g'        /etc/pamac.conf
-    sudo sed -i '/CheckAURUpdates/s/^#//g'  /etc/pamac.conf 
+    sudo sed -i '/CheckAURUpdates/s/^#//g'  /etc/pamac.conf
     cd ~
 fi
 
@@ -201,4 +203,11 @@ sudo systemctl enable mpd
 
 pip install dbus-python
 xdg-user-dirs-update
-chsh -s $(which zsh)
+
+current_shell=$(grep "^$USER" /etc/passwd | awk -F ':' '{print $7}')
+if [ "$current_shell" == "$(which zsh)" ]; then
+    echo "Shell already set to: $current_shell"
+else
+    chsh -s $(which zsh)
+    zsh
+fi
