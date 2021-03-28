@@ -75,10 +75,6 @@ pkgs_wm="
     rofi-dmenu
     "
 
-pkgs_audio="
-    cava
-    "
-
 pkgs_network="
     network-manager-applet
     networkmanager-dmenu-git
@@ -113,6 +109,10 @@ pkgs_util="
 pkgs_fonts="
     gsfonts
     nerd-fonts-complete
+    nerd-fonts-fira-code
+    nerd-fonts-fira-mono
+    nerd-fonts-jetbrains-mono
+    nerd-fonts-source-code-pro
     noto-fonts
     siji-git
     terminus-font
@@ -133,7 +133,6 @@ pkgs="
     ${pkgs_video}
     ${pkgs_dm}
     ${pkgs_wm}
-    ${pkgs_audio}
     ${pkgs_network}
     ${pkgs_util}
     ${pkgs_fonts}
