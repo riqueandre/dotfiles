@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "1) bspwm 	2) i3"
+echo "1) bspwm  2) i3"
 read -r -p "Choose your WM: " wm
 case $wm in 
     1)
@@ -16,6 +16,34 @@ case $wm in
         exit 0
         ;;
 esac
+
+echo "1) b4skyx	 2) cut"
+read -r -p "Choose your theme: " wm_theme
+case $wm_theme in 
+    1)
+        wm_theme_actions="
+                         cp -r ~/dotfiles/themes/bspwm-b4skyx/.Xresources    ~/         ;
+                         cp -r ~/dotfiles/themes/bspwm-b4skyx/polybar        ~/.config/ ;
+                         cp -r ~/dotfiles/themes/bspwm-b4skyx/picom          ~/.config/ ;
+                         cp -r ~/dotfiles/themes/bspwm-b4skyx/dunst          ~/.config/ ;
+                         cp -r ~/dotfiles/themes/bspwm-b4skyx/rofi           ~/.config/ ;
+                         "
+        ;;
+    2)
+        wm_theme_actions="
+                         cp -r ~/dotfiles/themes/i3-cuts/.Xresources    ~/              ;
+                         cp -r ~/dotfiles/themes/i3-cuts/polybar        ~/.config/      ;
+                         cp -r ~/dotfiles/themes/i3-cuts/picom          ~/.config/      ;
+                         cp -r ~/dotfiles/themes/i3-cuts/dunst          ~/.config/      ;
+                         cp -r ~/dotfiles/themes/i3-cuts/rofi           ~/.config/      ;
+                         "
+        ;;
+    *)
+        echo 'Select bspwm or i3'
+        exit 0
+        ;;
+esac
+
 
 
 # does full system update
@@ -164,22 +192,7 @@ cp -r ~/dotfiles/.zshrc                             ~/
 cp -r ~/dotfiles/.zshenv                            ~/
 cp -r ~/dotfiles/.config                            ~/
 cp -r ~/dotfiles/.local/                            ~/
-case $wm in
-  1)
-    cp -r ~/dotfiles/themes/bspwm-b4skyx/.Xresources    ~/
-    cp -r ~/dotfiles/themes/bspwm-b4skyx/polybar        ~/.config/
-    cp -r ~/dotfiles/themes/bspwm-b4skyx/picom          ~/.config/
-    cp -r ~/dotfiles/themes/bspwm-b4skyx/dunst          ~/.config/
-    cp -r ~/dotfiles/themes/bspwm-b4skyx/rofi           ~/.config/
-    ;;
-  2)
-    cp -r ~/dotfiles/themes/i3-cuts/.Xresources    ~/
-    cp -r ~/dotfiles/themes/i3-cuts/polybar        ~/.config/
-    cp -r ~/dotfiles/themes/i3-cuts/picom          ~/.config/
-    cp -r ~/dotfiles/themes/i3-cuts/dunst          ~/.config/
-    cp -r ~/dotfiles/themes/i3-cuts/rofi           ~/.config/
-    ;;
-esac
+eval ${wm_theme_actions}
 
 
 sudo sed -i 's/\#display-setup-script=/display-setup-script=\/usr\/bin\/vmware-user-suid-wrapper/g' /etc/lightdm/lightdm.conf
