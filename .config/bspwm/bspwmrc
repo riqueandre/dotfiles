@@ -57,7 +57,7 @@ bspc desktop -f 1
 # Replace caps lock with Esc
 setxkbmap -option caps:backspace
 
-hsetroot -cover ~/.config/background-images/wallpaper.jpg &
+hsetroot -cover ~/.config/wallpapers/default &
 ~/.config/polybar/launch.sh &
 
 # AUTOSTART

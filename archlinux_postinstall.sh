@@ -24,20 +24,24 @@ read -r -p "Choose your theme: " wm_theme
 case $wm_theme in
     1)
         wm_theme_actions="
-                         cp -r ~/dotfiles/themes/bspwm-b4skyx/.Xresources    ~/         ;
-                         cp -r ~/dotfiles/themes/bspwm-b4skyx/polybar        ~/.config/ ;
-                         cp -r ~/dotfiles/themes/bspwm-b4skyx/picom          ~/.config/ ;
-                         cp -r ~/dotfiles/themes/bspwm-b4skyx/dunst          ~/.config/ ;
-                         cp -r ~/dotfiles/themes/bspwm-b4skyx/rofi           ~/.config/ ;
+                         cp -r ~/dotfiles/themes/b4skyx/.Xresources                 ~/           ;
+                         cp -r ~/dotfiles/themes/b4skyx/polybar                     ~/.config/                      ;
+                         cp -r ~/dotfiles/themes/b4skyx/picom                       ~/.config/                      ;
+                         cp -r ~/dotfiles/themes/b4skyx/dunst                       ~/.config/                      ;
+                         cp -r ~/dotfiles/themes/b4skyx/rofi                        ~/.config/                      ;
+                         cp -r ~/dotfiles/themes/b4skyx/wallpapers                  ~/.config/                      ;
+                         ln -sf ~/dotfiles/themes/b4skyx/wallpapers/astronaut.jpg   ~/.config/wallpapers/default    ;
                          "
         ;;
     2)
         wm_theme_actions="
-                         cp -r ~/dotfiles/themes/i3-cuts/.Xresources    ~/              ;
-                         cp -r ~/dotfiles/themes/i3-cuts/polybar        ~/.config/      ;
-                         cp -r ~/dotfiles/themes/i3-cuts/picom          ~/.config/      ;
-                         cp -r ~/dotfiles/themes/i3-cuts/dunst          ~/.config/      ;
-                         cp -r ~/dotfiles/themes/i3-cuts/rofi           ~/.config/      ;
+                         cp -r ~/dotfiles/themes/cuts/.Xresources    ~/                                             ;
+                         cp -r ~/dotfiles/themes/cuts/polybar        ~/.config/                                     ;
+                         cp -r ~/dotfiles/themes/cuts/picom          ~/.config/                                     ;
+                         cp -r ~/dotfiles/themes/cuts/dunst          ~/.config/                                     ;
+                         cp -r ~/dotfiles/themes/cuts/rofi           ~/.config/                                     ;
+                         cp -r ~/dotfiles/themes/cuts/wallpapers     ~/.config/                                     ;
+                         ln -sf ~/dotfiles/themes/cuts/wallpapers/arch_purple.png   ~/.config/wallpapers/default    ;
                          "
         ;;
     *)
