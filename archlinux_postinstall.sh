@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "1) bspwm  2) i3"
+echo "1) bspwm    2) i3"
 read -r -p "Choose your WM: " wm
 case $wm in 
     1)
@@ -17,7 +17,7 @@ case $wm in
         ;;
 esac
 
-echo "1) b4skyx	 2) cut"
+echo "1) b4skyx    2) cut    3) not install"
 read -r -p "Choose your theme: " wm_theme
 case $wm_theme in 
     1)
@@ -39,8 +39,7 @@ case $wm_theme in
                          "
         ;;
     *)
-        echo 'Select bspwm or i3'
-        exit 0
+        echo 'skipping theme install'
         ;;
 esac
 
