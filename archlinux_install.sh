@@ -49,8 +49,8 @@ do
 done
 echo
 
-userdef_password_crypt="$(echo ${userdef_password} | openssl passwd -6 -stdin)"
-root_password_crypt="$(echo ${root_password} | openssl passwd -6 -stdin)"
+userdef_password_crypt=$(echo ${userdef_password} | openssl passwd -6 -stdin)
+root_password_crypt=$(echo ${root_password} | openssl passwd -6 -stdin)
 
 ### begin install
 timedatectl set-ntp true
@@ -139,9 +139,9 @@ systemctl enable NetworkManager
 systemctl enable systemd-resolved
 
 sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/g' /etc/sudoers
-echo "root:${root_password_crypt}" | chpasswd -e
+echo 'root:${root_password_crypt}' | chpasswd -e
 
-useradd -m -p ${userdef_password_crypt} ${userdef_username}
+useradd -m -p '${userdef_password_crypt}' ${userdef_username}
 usermod -G wheel ${userdef_username}
 
 exit
