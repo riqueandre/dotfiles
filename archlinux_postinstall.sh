@@ -10,13 +10,15 @@ read -r -p "Choose your WM: " wm
 case $wm in 
 [1])
     wm_selected='i3status i3blocks i3-gaps i3exit i3-scrot autotiling'
+    echo 'i3status'
     ;;
 
 [2])
     wm_selected='bspwm sxhkd'
+    echo 'bspwm'
     ;;
 [*])
-    echo "Select bspwm or i3"
+    echo 'Select bspwm or i3'
     exit 0
     ;;
 esac
