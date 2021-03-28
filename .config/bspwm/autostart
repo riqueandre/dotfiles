@@ -5,7 +5,7 @@ xrdb ~/.Xresources
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 xsetroot -cursor_name left_ptr &
 sxhkd &
-picom &
+killall picom; picom &
 vmware-user-suid-wrapper &
 xss-lock blurlock &
 

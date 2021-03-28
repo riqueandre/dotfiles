@@ -69,6 +69,8 @@ else
     makepkg -si --noconfirm
     sudo sed -i '/EnableAUR/s/^#//g'        /etc/pamac.conf
     sudo sed -i '/CheckAURUpdates/s/^#//g'  /etc/pamac.conf
+    sudo sed -i '/NoUpdateHideIcon/s/^#//g' /etc/pamac.conf
+
     cd ~
 fi
 
@@ -204,7 +206,7 @@ sudo sed -i 's/\#display-setup-script=/display-setup-script=\/usr\/bin\/vmware-u
 sudo systemctl enable lightdm
 sudo systemctl enable mpd
 
-
+git config --global credential.helper store
 pip install dbus-python
 xdg-user-dirs-update
 
