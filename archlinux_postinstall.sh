@@ -33,7 +33,7 @@ then
 else
     git clone https://aur.archlinux.org/pamac-aur.git
     cd pamac-aur
-    makepkg -si
+    makepkg -si --noconfirm
     sudo sed -i '/EnableAUR/s/^#//g'        /etc/pamac.conf
     sudo sed -i '/CheckAURUpdates/s/^#//g'  /etc/pamac.conf 
     cd ~
