@@ -1,15 +1,15 @@
 #!/bin/bash
 
-echo "1) bspwm 	2) i3"
+sudo echo "1) bspwm 	2) i3"
 read -r -p "Choose your WM: " wm
 case $wm in 
     1)
-        wm_selected='i3status i3blocks i3-gaps i3exit i3-scrot autotiling'
-        echo 'installing i3status'
-        ;;
-    2)
         wm_selected='bspwm sxhkd'
         echo 'installing bspwm'
+        ;;
+    2)
+        wm_selected='i3status i3blocks i3-gaps i3exit i3-scrot autotiling'
+        echo 'installing i3status'
         ;;
     *)
         echo 'Select bspwm or i3'
