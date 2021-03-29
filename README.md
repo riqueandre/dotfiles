@@ -10,3 +10,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/riqueandre/dotfiles/main/a
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/riqueandre/dotfiles/main/archlinux_postinstall.sh)"
 ```
+
+## credits
+* https://github.com/b4skyx/dotfiles
+* https://github.com/adi1090x/polybar-themes
+* https://gitlab.com/dwt1/dotfiles
