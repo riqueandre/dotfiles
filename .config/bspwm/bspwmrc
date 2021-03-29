@@ -55,6 +55,7 @@ bspc rule -a *:SPLASH state=floating
 bspc desktop -f 1
 
 # Replace caps lock with Esc
+setxkbmap -layout us -variant intl
 setxkbmap -option caps:backspace
 
 hsetroot -cover ~/.config/wallpapers/default &
