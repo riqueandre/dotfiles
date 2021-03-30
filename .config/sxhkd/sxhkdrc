@@ -13,7 +13,7 @@ super + shift+ @space
 	rofi -show run
 
 # power menu
-alt + 0
+ctrl  + alt + l
     rofi -show power-menu -modi power-menu:rofi-power-menu
 
 # Screenshot
