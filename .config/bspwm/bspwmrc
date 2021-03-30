@@ -42,15 +42,14 @@ bspc config presel_feedback_color   "#373d41"
 
 # Rules
 
-bspc rule -a Brave-browser -o desktop=2
-bspc rule -a discord desktop='^8'
+bspc rule -a Google-chrome desktop=9 follow=on
+bspc rule -a skypeforlinux desktop=8
 bspc rule -a feh state='floating'
 bspc rule -a mpv state='floating'
 bspc rule -a openssh-askpass state='floating'
 bspc rule -a "Iwgtk" state='floating'
-bspc rule -a Zathura state='tiled'
 bspc rule -a Pavucontrol state='floating'
-bspc rule -a flameshot state='floating'
+bspc rule -a scrot state='floating'
 bspc rule -a *:SPLASH state=floating
 bspc desktop -f 1
 

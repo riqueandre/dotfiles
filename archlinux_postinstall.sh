@@ -136,6 +136,7 @@ pkgs_util="
     pfetch
     polkit-gnome
     pulsemixer
+    scrot
     tdrop-git
     unzip
     xdg-user-dirs
