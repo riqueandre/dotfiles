@@ -19,7 +19,7 @@ case $wm in
 esac
 
 
-echo "1) b4skyx	 2) cut  3) not install"
+echo "1) b4skyx  2) cut  3) not install"
 read -r -p "Choose your theme: " wm_theme
 case $wm_theme in
     1)
@@ -93,6 +93,7 @@ pkgs_video="
     xorg-xinput xorg-xinit
     xorg-xrdb
     xorg-xsetroot
+    xdg-utils
     "
 
 pkgs_dm="
