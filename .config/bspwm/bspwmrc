@@ -42,8 +42,8 @@ bspc config presel_feedback_color   "#373d41"
 
 # Rules
 
-bspc rule -a Google-chrome desktop=9 follow=on
-bspc rule -a skypeforlinux desktop=8
+bspc rule -a Google-chrome desktop=8 follow=on
+bspc rule -a skypeforlinux desktop=9
 bspc rule -a feh state='floating'
 bspc rule -a mpv state='floating'
 bspc rule -a openssh-askpass state='floating'
