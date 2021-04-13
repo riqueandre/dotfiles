@@ -18,7 +18,10 @@ ctrl  + alt + l
 
 # Screenshot
 Print {shift + ,_}
-  scrot {--select,_} '%F_%H-%M-%S_$wx$h.png' -e 'mkdir -p ~/Pictures/Screenshots/;mv $f ~/Pictures/Screenshots/' && notify-send 'Screenshot captured'
+    scrot {--select,_} '%F_%H-%M-%S_$wx$h.png' -e 'mkdir -p ~/Pictures/Screenshots/;mv $f ~/Pictures/Screenshots/' && notify-send 'Screenshot captured'
+
+super + button2
+    bspc node pointed -c
 
 #####################
 # BSPWM Keybindings #
