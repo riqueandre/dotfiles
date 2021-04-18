@@ -93,6 +93,7 @@ pkgs_video="
     xorg-xinput xorg-xinit
     xorg-xrdb
     xorg-xsetroot
+    xdg-user-dirs
     xdg-utils
     "
 
@@ -120,11 +121,13 @@ pkgs_network="
 pkgs_util="
     alacritty
     bat
+    bind
     calc
     conky
     exo
     feh
     gnome-font-viewer
+    gnome-keyring
     google-chrome
     hsetroot
     imwheel
@@ -138,9 +141,9 @@ pkgs_util="
     polkit-gnome
     pulsemixer
     scrot
+    sshpass
     tdrop-git
     unzip
-    xdg-user-dirs
     xss-lock
     "
 
@@ -161,6 +164,7 @@ pkgs_fonts="
 
 
 pkgs_dev="
+    httpie
     openjdk11-doc
     openjdk11-src
     python-pip
