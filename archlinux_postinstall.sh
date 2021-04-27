@@ -131,6 +131,7 @@ pkgs_util="
     google-chrome
     hsetroot
     imwheel
+    inetutils
     mpd
     ncmpcpp
     nemo
@@ -143,6 +144,7 @@ pkgs_util="
     scrot
     sshpass
     tdrop-git
+    tree
     unzip
     xss-lock
     "
