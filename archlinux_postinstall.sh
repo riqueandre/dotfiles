@@ -126,6 +126,7 @@ pkgs_util="
     conky
     exo
     feh
+    file-roller
     gnome-font-viewer
     gnome-keyring
     google-chrome
