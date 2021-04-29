@@ -1,5 +1,7 @@
 #!/bin/bash
 
+projectsPath="$HOME/Projects"
+dotfilesPath="$projectsPath/dotfiles"
 
 echo "1) bspwm  2) i3"
 read -r -p "Choose your WM: " wm
@@ -24,24 +26,24 @@ read -r -p "Choose your theme: " wm_theme
 case $wm_theme in
     1)
         wm_theme_actions="
-                         cp -r ~/dotfiles/themes/b4skyx/.Xresources                 ~/           ;
-                         cp -r ~/dotfiles/themes/b4skyx/polybar                     ~/.config/                      ;
-                         cp -r ~/dotfiles/themes/b4skyx/picom                       ~/.config/                      ;
-                         cp -r ~/dotfiles/themes/b4skyx/dunst                       ~/.config/                      ;
-                         cp -r ~/dotfiles/themes/b4skyx/rofi                        ~/.config/                      ;
-                         cp -r ~/dotfiles/themes/b4skyx/wallpapers                  ~/.config/                      ;
-                         ln -sf ~/dotfiles/themes/b4skyx/wallpapers/astronaut.jpg   ~/.config/wallpapers/default    ;
+                         cp -r $dotfilesPath/themes/b4skyx/.Xresources                 ~/                              ;
+                         cp -r $dotfilesPath/themes/b4skyx/polybar                     ~/.config/                      ;
+                         cp -r $dotfilesPath/themes/b4skyx/picom                       ~/.config/                      ;
+                         cp -r $dotfilesPath/themes/b4skyx/dunst                       ~/.config/                      ;
+                         cp -r $dotfilesPath/themes/b4skyx/rofi                        ~/.config/                      ;
+                         cp -r $dotfilesPath/themes/b4skyx/wallpapers                  ~/.config/                      ;
+                         ln -sf $dotfilesPath/themes/b4skyx/wallpapers/astronaut.jpg   ~/.config/wallpapers/default    ;
                          "
         ;;
     2)
         wm_theme_actions="
-                         cp -r ~/dotfiles/themes/cuts/.Xresources    ~/                                             ;
-                         cp -r ~/dotfiles/themes/cuts/polybar        ~/.config/                                     ;
-                         cp -r ~/dotfiles/themes/cuts/picom          ~/.config/                                     ;
-                         cp -r ~/dotfiles/themes/cuts/dunst          ~/.config/                                     ;
-                         cp -r ~/dotfiles/themes/cuts/rofi           ~/.config/                                     ;
-                         cp -r ~/dotfiles/themes/cuts/wallpapers     ~/.config/                                     ;
-                         ln -sf ~/dotfiles/themes/cuts/wallpapers/arch_purple.png   ~/.config/wallpapers/default    ;
+                         cp -r $dotfilesPath/themes/cuts/.Xresources    ~/                                             ;
+                         cp -r $dotfilesPath/themes/cuts/polybar        ~/.config/                                     ;
+                         cp -r $dotfilesPath/themes/cuts/picom          ~/.config/                                     ;
+                         cp -r $dotfilesPath/themes/cuts/dunst          ~/.config/                                     ;
+                         cp -r $dotfilesPath/themes/cuts/rofi           ~/.config/                                     ;
+                         cp -r $dotfilesPath/themes/cuts/wallpapers     ~/.config/                                     ;
+                         ln -sf $dotfilesPath/themes/cuts/wallpapers/arch_purple.png   ~/.config/wallpapers/default    ;
                          "
         ;;
     *)
@@ -58,6 +60,7 @@ sudo pacman --noconfirm -Syu
 
 mkdir -p .config
 mkdir -p .local/share
+mkdir -p $projectsPath
 
 
 if [[ -d $HOME/pamac-aur ]]
@@ -75,11 +78,11 @@ else
 fi
 
 
-if [[ -d $HOME/dotfiles ]]
+if [[ -d $dotfilesPath ]]
 then
     echo "skipping clone dotfiles"
 else
-    git clone https://github.com/riqueandre/dotfiles
+    git clone https://github.com/riqueandre/dotfiles $dotfilesPath
 fi
 
 
@@ -204,12 +207,12 @@ else
 fi
 
 
-cp -r ~/dotfiles/.imwheelrc                         ~/
-cp -r ~/dotfiles/.p10k.zsh                          ~/
-cp -r ~/dotfiles/.zshrc                             ~/
-cp -r ~/dotfiles/.zshenv                            ~/
-cp -r ~/dotfiles/.config                            ~/
-cp -r ~/dotfiles/.local/                            ~/
+cp -r $dotfilesPath/.imwheelrc                         ~/
+cp -r $dotfilesPath/.p10k.zsh                          ~/
+cp -r $dotfilesPath/.zshrc                             ~/
+cp -r $dotfilesPath/.zshenv                            ~/
+cp -r $dotfilesPath/.config                            ~/
+cp -r $dotfilesPath/.local/                            ~/
 eval ${wm_theme_actions}
 
 
